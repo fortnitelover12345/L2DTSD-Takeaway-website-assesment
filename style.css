@@ -187,20 +187,52 @@ text-align: center;
 .header-menu{
   margin-bottom: 80px;
 }
-.menu-item1{
-  width: 500px;
-  height: 360px;
+/* Style the menu items */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 50px;
 }
-.menu-items{
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  gap: 5px;
-  width: 500px;
-  margin: left;
-  margin-top: 15px;
-  padding: 1%;
+.menu-item {
+  display: grid;
+  align-items: end;
+  margin: auto;
+  width: 95%;
+  margin-top: 40px;
+  margin-bottom: 40px;;
   text-align: center;
   background: #ddd;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.menu-item img {
+  width: 225px;
+  height: 250px;
+  align-items: center;
+}
+.button-buy {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  background-color: #738CBA;
+  font-size: 18px;
+}
+
+.menu-item h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.menu-item p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* style the checkout page content*/
+.item-header{
+  align-items: center;
+}
+.checkout-item {
+border: none;
+  border-radius: 12px;
+  padding: 15px;
 }
