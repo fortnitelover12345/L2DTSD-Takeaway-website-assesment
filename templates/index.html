@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title> Kendricks Chicken </title>
+    <title>Kendricks Chicken</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 
 <body>
     <div class="header">
         <div class="header-left">
             <a href="index.html" class="logo"><img src="KDC LOGO.png" class="KDC-logo"></a>
-            <a href="signin.html">Menu</a>
+            <a href="{{url_for('signup')}}">Menu</a>
         </div>
         <h1 class="header-title">Kendricks Chicken</h1>
         <div class="header-right">
-            <a href="signin.html">Sign in</a>
+            <a href="{{url_for('signup')}}">Sign in</a>
         </div>
       </div>
     <section>
     <div class="main-content">
-        <a href="signin.html">
+        <a href="{{url_for('signup')}}">
         <button class="order-button">Begin Order</button>
         </a>
         <img src="Main page chicken image.jpg" alt="Kendricks Chicken" class="chicken-image">

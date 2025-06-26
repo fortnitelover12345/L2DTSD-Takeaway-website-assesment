@@ -468,7 +468,7 @@ text-align: center;
     justify-content: center;
     gap: 30px; /* Space between the order recap and receipt */
     padding: 50px;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    flex-wrap: wrap; 
 }
 
 .order-recap-container {
@@ -489,7 +489,7 @@ text-align: center;
 .menu-item-checkout {
     display: flex;
     align-items: center;
-    background-color: #f1f1f1; /* Lighter background for individual items */
+    background-color: #f1f1f1; 
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
