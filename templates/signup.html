@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Sign Up</h1>
-    <form method="POST" action="{{ url_for('signup') }}">
-        <label for="username">Name:</label><br>
-        <input type="text" id="username" name="username" required><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+    <div class="header">
+        <div class="header-left">
+            <a href="" class="logo">
+                <img src="{{ url_for('static', filename='KDC LOGO.png') }}" class="KDC-logo">
+            </a>
+            <a href="{{ url_for('success') }}">Menu</a>
+        </div>
+        <div class="header-menu">
+            <h1 class="header-title">Kendrick's chicken</h1>
+        </div>
+        <div class="header-right">
+            <a href="{{ url_for('success') }}">Go back</a>
+        </div>
+    </div>
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+    <div class="sign-up-box" style="margin-top: 50px;">
+        <h1>Sign in</h1>
+        
+        <form method="POST" action="{{ url_for('signup') }}">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
 
-        <input type="submit" value="Register">
-    </form>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <input type="submit" value="Sign in" style="background-color: #738CBA;">
+        </form>
+    </div>
+
 </body>
 </html>
