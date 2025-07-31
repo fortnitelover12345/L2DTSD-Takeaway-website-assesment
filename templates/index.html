@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kendricks Chicken</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="/static/KDC LOGO.png" type="image/png">
 </head>
 
 
 <body>
     <div class="header">
         <div class="header-left">
-            <a href="index.html" class="logo"><img src="KDC LOGO.png" class="KDC-logo"></a>
+            <a href="{{url_for('index')}}" class="logo"><img src="{{ url_for('static', filename='KDC LOGO.png') }}" class="KDC-logo"></a>
             <a href="{{url_for('signup')}}">Menu</a>
         </div>
         <h1 class="header-title">Kendricks Chicken</h1>
@@ -24,7 +25,7 @@
         <a href="{{url_for('signup')}}">
         <button class="order-button">Begin Order</button>
         </a>
-        <img src="Main page chicken image.jpg" alt="Kendricks Chicken" class="chicken-image">
+        <img src="{{url_for('static', filename='Main page chicken image.jpg')}}" alt="Kendricks Chicken" class="chicken-image">
     </div>
     </section>
     

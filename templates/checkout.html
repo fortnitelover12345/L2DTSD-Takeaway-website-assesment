@@ -3,62 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='KDC LOGO.png') }}" type="image/png">
     <title>Checkout</title>
 </head>
 <body>
     <div class="header">
         <div class="header-left">
-            <a href="" class="logo"><img src="KDC LOGO.png" class="KDC-logo"></a>
-            <a href="index.html">Home</a>
+            <a href="{{ url_for('index') }}" class="logo">
+                <img src="{{ url_for('static', filename='KDC LOGO.png') }}" class="KDC-logo" alt="KDC Logo">
+            </a>
+            <a href="{{ url_for('index') }}">Home</a>
         </div>
         <div class="header-menu">
-        <h1 class="header-title">Kendricks Chicken</h1>
-        </div>
-        <form action="https://google.com/search" method="get">
-        <div class="search">
-            <span class="material-symbols-outlined">search</span>
-            <input class="search-input" type="search" placeholder="Search">
-        </form>
+            <h1 class="header-title">Kendricks Chicken</h1>
         </div>
         <div class="header-right">
-            <a href="menu.html">Go back</a>
+            <a href="{{ url_for('success') }}">Go back to Menu</a>
         </div>
     </div>
+
     <div class="checkout-page-content">
         <div class="order-recap-container">
-            <h2 class="section-title">Order recap</h2>
-            <div class="menu-item-checkout">
-                <img src="Wicked Wings image-CHATGPT.png" alt="Wicked Wings" class="checkout-item-image">
-                <h1 class="item-header">Item one</h1>
-                <p class="item-price">Price</p>
-            </div>
-            <div class="menu-item-checkout">
-                <img src="Kendricks Classic image-CHATGPT v2.png" alt="Kendricks Classic" class="checkout-item-image">
-                <h1 class="item-header">Item two</h1>
-                <p class="item-price">Price</p>
-            </div>
-            <div class="menu-item-checkout">
-                <img src="Mini Wingys image-CHATGPT.png" alt="Mini Wingys" class="checkout-item-image">
-                <h1 class="item-header">Item three</h1>
-                <p class="item-price">Price</p>
-            </div>
-            <div class="menu-item-checkout">
-                <img src="Euphoria Feast image-CHATGPT.png" alt="Euphoria Feast" class="checkout-item-image">
-                <h1 class="item-header">Item four</h1>
-                <p class="item-price">Price</p>
-            </div>
-            <div class="menu-item-checkout">
-                <img src="Keems Japanese Style Jumbo-CHATGPT.png" alt="Keems Japanese Style Jumbo" class="checkout-item-image">
-                <h1 class="item-header">Item five</h1>
-                <p class="item-price">Price</p>
-            </div>
+            <h2 class="section-title">Order Recap</h2>
+
+            {% if cart_items %}
+                <div id="cart-items-container">
+                    {% for item in cart_items %}
+                        <div class="cart-item">
+                            <img src="{{ url_for('static', filename=item['image_url']) }}" alt="{{ item['name'] }}" class="item-image">
+                            <div class="item-details">
+                                <p class="item-name">{{ item['name'] }}</p>
+                                <p class="item-quantity">Quantity: {{ item['quantity'] }}</p>
+                                <p class="item-price">${{ "%.2f"|format(item['price']|float) }} each</p>
+                                <p class="item-total">${{ "%.2f"|format(item['total_price']|float) }} total</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <!-- Clear cart button -->
+                <form action="{{ url_for('clear_cart') }}" method="post" style="margin-top: 20px;">
+                    <button type="submit" class="button-clear-cart" onclick="return confirm('Are you sure you want to clear your cart?')">Clear Cart</button>
+                </form>
+            {% else %}
+                <p>Your cart is empty. Go back to menu to add items.</p>
+            {% endif %}
         </div>
+
         <div class="receipt-container">
-            <h2 class="section-title">receipt</h2>
-            <div class="total-calculation">
-                <p>calculation of total price</p>
+            <h2 class="section-title">Receipt</h2>
+            <div class="total-calculation" id="total-calculation">
+                {% if cart_items %}
+                    {% set subtotal = 0 %}
+                    {% for item in cart_items %}
+                        <p>{{ item['name'] }} ({{ item['quantity'] }}x): ${{ "%.2f"|format((item['price']|float) * item['quantity']) }}</p>
+                        {% set subtotal = subtotal + ((item['price']|float) * item['quantity']) %}
+                    {% endfor %}
+                    <hr>
+                    <p><strong>Total: ${{ "%.2f"|format(total_price) }}</strong></p>
+                    
+                    <!-- Add checkout button -->
+                    <button class="checkout-final-button" onclick="alert('Order placed successfully!')">Place Order</button>
+                {% else %}
+                    <p>No items to calculate.</p>
+                {% endif %}
             </div>
         </div>
     </div>
