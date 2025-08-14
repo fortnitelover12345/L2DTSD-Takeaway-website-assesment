@@ -121,6 +121,9 @@ def menu():
                          cart_items=cart_items,
                          search_query=search_query)
 
+email_regex = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$"
+allowed_domains = ['gmail.com', 'outlook.com', 'yahoo.com', 'hotmail.com', 'edu.nz', 'stu.school.nz']
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -128,20 +131,44 @@ def signup():
         email = request.form['email'].strip()
         password = request.form['password'].strip()
 
+        # Ensure all fields are filled
         if not username or not email or not password:
             return render_template('signup.html', error="All fields are required.")
 
-        if not re.fullmatch(email_regex, email):
-            return render_template('signup.html', error="Invalid email address.")
+        # Enforce lowercase usernames
+        if username != username.lower():
+            return render_template('signup.html', error="Username must be in lowercase.")
 
-        print(f"New user registered: Username - {username}, Email - {email}")
+        # Validate username format (letters, numbers, underscores, hyphens only)
+        if not re.fullmatch(r'^[a-z0-9_-]{3,20}$', username):
+            return render_template('signup.html', error="Username must be 3-20 characters long and can only contain lowercase letters, numbers, underscores, and hyphens.")
+
+        # Validate email format
+        if not re.fullmatch(email_regex, email):
+            return render_template('signup.html', error="Invalid email format.")
+
+        # Validate email domain
+        domain = email.split('@')[-1]
+        if domain.lower() not in allowed_domains:
+            return render_template('signup.html', error="Unsupported email domain.")
+
+        # Validate password length and complexity
+        if len(password) < 8:
+            return render_template('signup.html', error="Password must be at least 8 characters long.")
+        if not re.search(r'[A-Z]', password):
+            return render_template('signup.html', error="Password must contain at least one uppercase letter.")
+        if not re.search(r'[a-z]', password):
+            return render_template('signup.html', error="Password must contain at least one lowercase letter.")
+        if not re.search(r'[0-9]', password):
+            return render_template('signup.html', error="Password must contain at least one number.")
+        if not re.search(r'[!@#$%^&*(),.?":{}|<>]', password):
+            return render_template('signup.html', error="Password must contain at least one special character (!@#$%^&*(),.?\":{}|<>).")
+
+        # Proceed with registration (e.g., insert into database)
+        print(f"User registered: {username} ({email})")
         return redirect(url_for('menu'))
 
     return render_template('signup.html')
-
-@app.route('/success')
-def success():
-    return redirect(url_for('menu'))
 
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():

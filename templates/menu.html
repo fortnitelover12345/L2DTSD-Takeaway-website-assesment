@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--links to styleheet and link of search bar icon-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
@@ -8,12 +9,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
     <link rel="icon" href="/static/KDC LOGO.png" type="image/png">
 </head>
-
+<!-- navigation bar for the menu links to different pages including the search bar-->
 <body>
     <div class="header">
         <div class="header-left">
             <a href="{{url_for('index')}}" class="logo"><img src="{{ url_for('static', filename='KDC LOGO.png') }}" class="KDC-logo"></a>
-            <a href="{{url_for('index')}}">Home</a>
+            <a href="{{url_for('index')}}" span>🏠</span> <span> Home</span> </a></a>
         </div>
         <div class="header-menu">
             <h1 class="header-title">Kendricks Chicken</h1>
@@ -34,7 +35,7 @@
         <div class="header-right">
             <!-- Cart with Dropdown -->
             <div class="cart-container">
-                <a href="" class="cart-button">Cart</a>
+                <a href="" class="cart-button" span> 🛒 </span> <span> Cart</span> </a></a>
                 <div class="cart-dropdown">
                     <ul class="cart-items-list">
                         <!-- Dynamically populate cart items here -->

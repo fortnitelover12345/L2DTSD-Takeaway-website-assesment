@@ -529,6 +529,712 @@ text-align: center;
   color: rgba(0, 0, 0, 0.5);
   font-size: 23px;
 }
+.search-info {
+  margin-right:  444px;
+  margin-top: 6%;
+  font-size: 24px;
+  display: flex;
+  padding: 10px;
+  border-radius: 24px;
+  background-color: #738CBA;
+  justify-content: center;
+}
+/* Style the header menu (in order to make the search bar appear directly below the header) */
+.header-menu{
+  margin-bottom: 80px;
+}
+/* Style the menu items */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px; /* Increased gap for better spacing */
+  padding: 50px;
+}
+/* New styles for the checkout page */
+
+.checkout-page-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between the order recap and receipt */
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.order-recap-container {
+    background-color: #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px; /* Fixed width for the order recap section */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+.menu-item-checkout {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.checkout-item-image {
+    width: 80px; /* Smaller image size */
+    height: 80px;
+    object-fit: contain;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.menu-item-checkout .item-header {
+    flex-grow: 1; /* Allows item name to take up available space */
+    font-size: 18px;
+    margin: 0;
+    text-align: left; /* Align text to the left */
+}
+
+.menu-item-checkout .item-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-left: 15px; /* Space from the item name */
+}
+
+.receipt-container {
+    background-color: #738CBA;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.receipt-container .section-title {
+    color: white; /* White title for the receipt section */
+}
+
+.total-calculation {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white background for total */
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    margin-top: 20px;
+}
+/* Style the header with a coloured background and some padding */
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Style the header links */
+.header a {
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  font-family: sans-serif;
+}
+
+/* Style the logo link */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.KDC-logo {
+  width: 35px;
+  height: 35px;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Style the left section */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Style the right section */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+/* Styles the main content of the main page */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 500px;
+  margin: auto;
+  margin-top: 120px;
+  padding: 1%;
+  text-align: center;
+  background: #ddd;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+.order-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-button:hover {
+  background-color: #738CBA;
+}
+
+.chicken-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 25px;
+}
+
+/*style the sign up page*/
+.sign-up-box{
+  width: 360px;
+  min-height: 530px; /* Changed to min-height to fit new content */
+  margin: auto;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  padding-bottom: 20px; /* Added padding to the bottom */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+/* Style the sign up properties */
+.sign-up-box h1{
+text-align: center;
+padding-top: 15px;
+}
+.sign-up-box h4{
+text-align: center;
+}
+.sign-up-box form{
+  width: 300px;
+  margin-left: 20px;
+}
+.sign-up-box label{
+  display: flex;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.sign-up-box input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}
+
+.sign-up-box input[type="submit"]{
+  width: 320px;
+  height: 35px;
+  margin-top: 20px ;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #738CBA;
+  font-size: 18px;
+}
+.sign-up-box p{
+  text-align: center;
+  padding-top: 20px;
+  font-size: 15px;
+}
+/* --- Styles for Error Message Container --- */
+.error-container {
+  /* This reserves vertical space so the layout doesn't shift */
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.error-popup {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #a94442;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  text-align: center;
+}
+
+/* Styles for the new requirements section */
+.signup-requirements {
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+    width: 320px;
+    margin: 25px auto ;
+    margin-top: 95px;
+    padding: 15px;
+    background-color: #e9e9e9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.signup-requirements h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+}
+
+.signup-requirements ul {
+    list-style-position: inside;
+    padding-left: 5px;
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-requirements li {
+    margin-bottom: 10px;
+}
+.signup-requirements li:last-child {
+    margin-bottom: 0;
+}
+
+.signup-requirements li ul {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.signup-requirements li ul li {
+    margin-bottom: 5px;
+}
+
+/* Style the menu search bar*/
+
+.search {
+  margin-right:  444px;
+  margin-top: 6%;
+  font-size: 24px;
+  display: flex;
+  padding: 10px;
+  border-radius: 24px;
+  background-color: #738CBA;
+  justify-content: center;
+}
+.search input {
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: none;
+  background: transparent;
+}
+.search input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 23px;
+}
+/* Style the header menu (in order to make the search bar appear directly below the header) */
+.header-menu{
+  margin-bottom: 80px;
+}
+/* Style the menu items */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px; 
+  padding: 50px;
+}
+.menu-item {
+  display: grid;
+  place-items: center; 
+  margin: 20px 0; 
+  width: 95%;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  text-align: center;
+  background: #ddd;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.menu-item-image {
+  width: 225px;
+  height: 250px;
+  object-fit: contain; /* Changed from cover to contain to ensure image is not cut off */
+  align-items: center;
+}
+.button-buy {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  background-color: #738CBA;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.menu-item h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.menu-item p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* New styles for the cart dropdown */
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.cart-container:hover .cart-dropdown {
+    display: block; /* Show on hover */
+}
+
+.cart-items-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 5px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.cart-item span {
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.cart-empty-message {
+    text-align: center;
+    color: grey;
+    padding: 20px 0;
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #738CBA;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.checkout-button:hover {
+    background-color: #5c7099;
+}
+
+/* Style the "Clear Cart" and "Place Order" buttons */
+.button-clear-cart {
+  padding: 10px 20px;
+  background-color: #738CBA;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-clear-cart:hover {
+  background-color: #5c7099;
+}
+
+.checkout-final-button {
+  padding: 10px 20px;
+  background-color: #738CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkout-final-button:hover {
+  background-color: #5c7099;
+}
+
+/* style the checkout page content*/
+
+/* Style the header with a coloured background and some padding */
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Style the header links */
+.header a {
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  font-family: sans-serif;
+}
+
+/* Style the logo link */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.KDC-logo {
+  width: 35px;
+  height: 35px;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Style the left section */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Style the right section */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+/* Styles the main content of the main page */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 500px;
+  margin: auto;
+  margin-top: 120px;
+  padding: 1%;
+  text-align: center;
+  background: #ddd;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+}
+.order-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-button:hover {
+  background-color: #738CBA;
+}
+
+.chicken-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 25px;
+}
+
+/*style the sign up page*/
+.sign-up-box{
+  width: 360px;
+  height: 520px;
+  margin: auto;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+}
+/* Style the sign up properties */
+.sign-up-box h1{
+text-align: center;
+padding-top: 15px;
+}
+.sign-up-box h4{
+text-align: center;
+}
+.sign-up-box form{
+  width: 300px;
+  margin-left: 20px;
+}
+.sign-up-box label{
+  display: flex;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.sign-up-box input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border: 1px solid gray;
+  border-radius: 6px;
+  outline: none;
+}
+.sign-up-box input[type="button"]{
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #738CBA;
+  font-size: 18px;
+}
+.sign-up-box p{
+  text-align: center;
+  padding-top: 20px;
+  font-size: 15px;
+}
+/* Style the menu search bar*/
+
+.search {
+  margin-right:  444px;
+  margin-top: 6%;
+  font-size: 24px;
+  display: flex;
+  padding: 10px;
+  border-radius: 24px;
+  background-color: #738CBA;
+  justify-content: center;
+}
+.search input {
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: none;
+  background: transparent;
+}
+.search input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 23px;
+}
+.search-info {
+  margin-right: 1500px;
+  background-color: #738CBA;
+  justify-content: left;
+}
 /* Style the header menu (in order to make the search bar appear directly below the header) */
 .header-menu{
   margin-bottom: 80px;

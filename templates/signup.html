@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="icon" href="/static/KDC LOGO.png" type="image/png">
-</head>
-<body>
-
-    <div class="header">
-        <div class="header-left">
-            <a href="{{url_for('index')}}" class="logo"><img src="{{ url_for('static', filename='KDC LOGO.png') }}" class="KDC-logo"></a>
-            <a href="{{url_for('signup')}}">Menu</a>
-        </div>
-        <h1 class="header-title">Kendricks Chicken</h1>
-        <div class="header-right">
-            <a href="{{url_for('index')}}"> Go back</a>
-        </div>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sign In</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="icon" href="{{ url_for('static', filename='KDC LOGO.png') }}" type="image/png">
+   </head>
+   <body>
+      <div class="header">
+         <div class="header-left">
+            <a href="{{ url_for('index') }}" class="logo"><img src="{{ url_for('static', filename='KDC LOGO.png') }}" class="KDC-logo" alt="KDC Logo"></a>
+            <a href="{{ url_for('menu') }}">Menu</a>
+         </div>
+         <h1 class="header-title">Kendricks Chicken</h1>
+         <div class="header-right">
+            <a href="{{ url_for('index') }}" class="arrow-button-with-text"> <span>&larr;</span> <span>Go Back</span> </a>
+         </div>
       </div>
-    <div class="sign-up-box" style="margin-top: 50px;">
-        <h1>Sign in</h1>
-        
-        <form method="POST" action="{{ url_for('signup') }}">
+      <div class="sign-up-box" style="margin-top: 50px;">
+         <h1>Sign In</h1>
+         <div class="error-container">
+            {% if error %}
+            <div class="error-popup">{{ error }}</div>
+            {% endif %}
+         </div>
+         <form method="POST" action="{{ url_for('signup') }}">
             <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" required><br><br>
+            <input type="text" id="username" name="username">
             <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email" required><br><br>
+            <input type="text" id="email" name="email">
             <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
-
+            <input type="password" id="password" name="password">
             <input type="submit" value="Sign in">
-        </form>
-    </div>
-
-</body>
+         </form>
+         <div class="signup-requirements">
+            <h4>Sign-Up Requirements</h4>
+            <ul>
+               <li><strong>Username:</strong> 3-20 lowercase letters, numbers, underscores, or hyphens.</li>
+               <li><strong>Email:</strong> A valid address from a common provider (e.g., Gmail, Outlook).</li>
+               <li>
+                  <strong>Password:</strong> Must be at least 8 characters and include:
+                  <ul>
+                     <li>An uppercase letter (A-Z)</li>
+                     <li>A lowercase letter (a-z)</li>
+                     <li>A number (0-9)</li>
+                     <li>A special character (!@#$%)</li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </body>
 </html>

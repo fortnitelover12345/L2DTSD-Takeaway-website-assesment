@@ -8,18 +8,19 @@
     <title>Checkout</title>
 </head>
 <body>
+    <!--navigation bar links-->
     <div class="header">
         <div class="header-left">
             <a href="{{ url_for('index') }}" class="logo">
                 <img src="{{ url_for('static', filename='KDC LOGO.png') }}" class="KDC-logo" alt="KDC Logo">
             </a>
-            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{url_for('index')}}" span> 🏠 </span> <span> Home</span> </a></a>
         </div>
         <div class="header-menu">
             <h1 class="header-title">Kendricks Chicken</h1>
         </div>
         <div class="header-right">
-            <a href="{{ url_for('success') }}">Go back to Menu</a>
+            <a href="{{ url_for('menu') }}" class="arrow-button-with-text"> <span>←</span> <span>Back to Menu</span> </a>
         </div>
     </div>
 
